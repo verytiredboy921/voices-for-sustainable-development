@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit post</title>
+        <link rel="stylesheet"  href="/css/styles.css">
+    </head>
+    <body>
+        <div class="Blog-container">
+            <div class="form-container">
+                <form action="/edit/<%=post.id %>" method="post">
+                    <label>Title</label>
+                    <input type="text"  name="title" value="<%= post.title %>">
+                    <label>Content</label>
+                    <textarea name="content" rows="8" ><%= post.content %></textarea>
+                    <label>Author</label>
+                    <input type="text" name="author" value="<%= post.author %>">
+                    <button class="add-button" type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

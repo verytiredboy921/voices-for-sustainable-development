@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Voices for Sustainable Development</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="Blog-container">
+      <div class="post-container">
+
+        <h1 class="title">Voices for Sustainable Development</h1>
+        <p class="subtitle">
+          This platform empowers students to share awareness-driven articles aligned with the United Nations Sustainable Development Goals 11 and 16.
+        </p>
+        <p class="sub-subtitle">
+          Each submission contributes to structured youth dialogue around urban sustainability and institutional transparency.
+        </p>
+        <p class="tagline">
+          Promoting awareness around Sustainable Cities (SDG 11) and Strong Institutions (SDG 16)
+        </p>
+
+        <a href="/new" class="new-post-button">New Post</a>
+
+        <% posts.forEach(post => { %>
+          <div class="post-card">
+            <p class="category"><%= post.category || '' %></p>
+            <p class="date"><%= post.date || '' %></p>
+            <h2 class="post-title"><%= post.title %></h2>
+            <p class="post-body"><%= post.content %></p>
+            <p class="author">By: <%= post.author %></p>
+
+            <div class="action-buttons">
+              <a href="/edit/<%= post.id %>" class="edit-button">Edit</a>
+              <form action="/delete/<%= post.id %>" method="POST" class="inline-form">
+                <button class="delete-button">Delete</button>
+              </form>
+            </div>
+          </div>
+        <% }); %>
+
+      </div>
+    </div>
+  </body>
+</html>
